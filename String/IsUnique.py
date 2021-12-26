@@ -1,8 +1,5 @@
 
-
 def isUnique(s):
-
-
     #we want to create an array of 128 false values
     bool_arr = [False for i in range(1, 129)]
 
