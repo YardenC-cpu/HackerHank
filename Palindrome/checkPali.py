@@ -21,10 +21,10 @@ from collections import Counter
 
 def checkPali(s):
 
+    #organizing the string 
     s = s.lower()
     s = list("".join(l for l in s if l.isalpha()))
 
-    print(s)
     s_dict = Counter(s)
     booleanPali = False 
 
