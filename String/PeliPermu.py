@@ -8,7 +8,7 @@ def pelidomePermu(s):
     checkOdd = False  
 
     #create a dict of the array
-    chars = defaultdict(int)
+    chars = defaultdict(s)
 
     #mapping the char to its corresponded times 
     for char_s in s_list:
