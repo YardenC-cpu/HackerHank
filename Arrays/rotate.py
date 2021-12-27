@@ -1,26 +1,42 @@
-def rotate(pixels):
-    for pixel in range(len(pixels)):
-        swap_function(pixels[0],pixels[3])
-        swap_function(pixels[1],pixels[2])
+'''
+Rotate Array, taken from LeetCode 
+Source: https://leetcode.com/problems/rotate-array/
 
-    return pixels
+Description:
+Given an array, rotate the array to the right by k steps, where k is non-negative.
 
-def swap_function(arr_1, arr_2):
-    for i in range(len(arr_1)):
-        temp = arr_1[i]
-        arr_1[i] = arr_2[i]
-        arr_2[i] = temp
-    
-list_1 = [1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]
-list_2 = [1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]
-list_3 = [1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]
-#arr = [list_1, list_2, list_3]
-arr = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]
-print(rotate(arr))
+Explanation:
+The kind of questions that when you draw it, you see the solution. 
+Nothing fancy here, just pop and insert the elements that we are rotating.
 
-#rotation of a pixels:
-# temp = top[i]
-# top[i] = left[i]
-#left[i] = bottom[i]
-#bottom[i] = right[i]
-#right[i] = temp 
+Time complexity of O(k) and memory of O(1)
+
+'''
+
+
+#Time complexity of O(k) and memory of O(1)
+def rotate(self, nums, k): 
+    add = []                     
+    for i in range(k):
+        add= nums.pop()
+        nums.insert(0, add)
+
+
+
+
+#Time complexity of O(1) and memory space of O(N)
+def rotate_another(nums, k):
+    #this way we don't have to worry about the case when k > len(nums)
+    k = k % len(nums)
+
+
+    #nums[:] is equivelent of creating a new array
+    #nums[-k:] is for picking the last k elements in the array  
+    # nums[:-k] is to pick the element from the begining till k
+    nums[:] = nums[-k:] + nums[:-k] 
+
+    return nums
+
+print(rotate_another(nums=[1,2,3,4,5,6,7], k= 3))
+
+
