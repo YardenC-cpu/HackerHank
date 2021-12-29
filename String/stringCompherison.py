@@ -4,13 +4,10 @@ def stringCheck(a):
     count = 1 
     current_letter = a[0]
     arr = []
-    print("the len of a is ", len(a))
 
     for i in range(1, len(a)):
-        print("the i is ", i)
 
         if i == len(a) -1:
-            print("it is the last element")
             if current_letter == a[i]:
                 count += 1
                 arr.append(current_letter)
@@ -28,8 +25,6 @@ def stringCheck(a):
                 arr.append(count)
                 current_letter = a[i]
                 count = 1
-       
-
 
     if len(arr) > len(a):
         return ''.join(str(i) for i in a)
